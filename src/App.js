@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import './app.css'
 
 const Container = styled.div`
-  display: flex;
-  padding: 400px 500px;
+  padding: 200px;
   background-color: #222;
   color: #eee;
+  border-radius: 3px;
+  border: 2px solid cornflowerblue;
 `
 
 const App = () => {
+  const [text, setText] = useState('Light')
+
+  const handleClick = () => {
+    text === "Light" ? setText('Dark') : setText("Light")
+  }
+
   return (
+    <>
+    <button type="button" className="btn" onClick={handleClick}>
+      switch
+    </button>
     <Container>
-      <h1>Light Theme</h1>
-      <div>
-        <button type="button" className="btn">switch</button>
-      </div>
+      <h1>{text}</h1>
+      <h1>Theme</h1>
     </Container>
+    </>
   )
 }
 
