@@ -41,6 +41,3 @@ const App = () => {
 }
 
 export default App
-
-// FaToggleOff
-// FaToggleOn
